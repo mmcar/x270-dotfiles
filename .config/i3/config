@@ -10,24 +10,11 @@ bindsym $mod+Return exec gnome-terminal
 # Firefox : $mod + w
 bindsym $mod+w exec firefox
 
-# Emacs : $mod + Shift + Return
-bindsym $mod+Shift+Return exec emacsclient -c
-bindsym $mod+Control+Return exec emacs --with-profile default
-
-
 # Dmenu interactions ###########################################
 ################################################################
 
 # dmenu : $mod + d
 bindsym $mod+d exec --no-startup-id dmenu_run
-
-# rofi : $mod + Shift + d
-bindsym $mod+Shift+d exec --no-startup-id rofi -show run
-
-# rofi switch : $mod + p
-bindsym $mod+p exec --no-startup-id rofi -show window
-
-
 
 # i3 Bindings ##################################################
 ################################################################
@@ -153,10 +140,9 @@ bar {
 	}
 }
 
+# Required for i3-gnome ###
+exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
+exec_always --no-startup-id gnome-power-manager
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id gnome-flashback
 
-
-# startup programs ##############################################
-#################################################################
-exec --no-startup-id ~/bin/syncthing/syncthing -no-browser
-
-exec --no-startup-id ~/Documents/configs/i3startup.sh
