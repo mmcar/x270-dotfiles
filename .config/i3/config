@@ -1,0 +1,162 @@
+# $mod : META
+set $mod Mod4
+
+# Application Hotkeys ##########################################
+################################################################
+
+# Terminal : $mod + Return
+bindsym $mod+Return exec gnome-terminal
+
+# Firefox : $mod + w
+bindsym $mod+w exec firefox
+
+# Emacs : $mod + Shift + Return
+bindsym $mod+Shift+Return exec emacsclient -c
+bindsym $mod+Control+Return exec emacs --with-profile default
+
+
+# Dmenu interactions ###########################################
+################################################################
+
+# dmenu : $mod + d
+bindsym $mod+d exec --no-startup-id dmenu_run
+
+# rofi : $mod + Shift + d
+bindsym $mod+Shift+d exec --no-startup-id rofi -show run
+
+# rofi switch : $mod + p
+bindsym $mod+p exec --no-startup-id rofi -show window
+
+
+
+# i3 Bindings ##################################################
+################################################################
+
+
+# kill focused window : $mod + Shift + q
+bindsym $mod+Shift+q kill
+
+# change focus : $mod + {direction}
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+# TODO: add $mod+arrows fallback
+
+# move focused window : $mod + Shift + {direction}
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+# TODO: add $mod+arrows fallback
+
+# toggle split direction : $mod + x
+bindsym $mod+x split toggle
+
+# fullscreen : $mod + f
+bindsym $mod+f fullscreen toggle
+
+# change container layout
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+Shift+Control+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# toggle bar : $mod + Space
+bindsym $mod+space bar mode toggle
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+
+# Look & Feel ##################################################
+################################################################
+
+# Font for window titles. Will also be used by the bar unless a different font
+font pango: Source Code Pro semibold 18px
+
+# border and gaps
+default_border pixel 5 
+gaps inner 10
+gaps outer 5
+
+# Define workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# resize
+bindsym $mod+Control+h resize shrink width 15 px or 10 ppt
+bindsym $mod+Control+j resize grow height 15 px or 10 ppt
+bindsym $mod+Control+k resize shrink height 15 px or 10 ppt
+bindsym $mod+Control+l resize grow width 15 px or 10 ppt
+
+# Drag floating windows with mouse + $mod
+floating_modifier $mod
+
+
+# Bar ##########################################################
+################################################################
+bar {
+        status_command i3status
+	      font pango: Source Code Pro 30px	
+	      position top
+	colors {
+		background #333333
+		statusline #CCCCCC
+	}
+}
+
+
+
+# startup programs ##############################################
+#################################################################
+exec --no-startup-id ~/bin/syncthing/syncthing -no-browser
+
+exec --no-startup-id ~/Documents/configs/i3startup.sh
