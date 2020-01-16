@@ -1,55 +1,64 @@
-# $mod : META
-set $mod Mod4
+set $mod Mod4 
 
-# Application Hotkeys ##########################################
-################################################################
+### Applications
 
-# Terminal : $mod + Return
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec --no-startup-id kitty # Terminal
 
-bindsym $mod+` exec code
+bindsym $mod+grave exec --no-startup-id code # VS-Code
 
-# Firefox : $mod + w
-bindsym $mod+w exec firefox
+exec --no-startup-id emacs --daemon
+bindsym $mod+Shift+Return exec --no-startup-id emacsclient -nc # Emacs
 
-# Dmenu interactions ###########################################
-################################################################
+bindsym $mod+w exec --no-startup-id firefox # Web Browser
+bindsym $mod+Shift+w exec --no-startup-id firefox --private-window
 
-# dmenu : $mod + d
-bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -show-icons
+bindsym $mod+c exec --no-startup-id discord
 
-# i3 Bindings ##################################################
-################################################################
+# Flameshot for Print Screen
+# Depends: Unbind gnome PrintScreen Binding
+# gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot '[]'
+bindsym Print exec --no-startup-id flameshot gui
+
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -show-icons # Rofi
+
+bindsym $mod+backslash exec --no-startup-id nautilus
 
 
-# kill focused window : $mod + q
+
+# i3 Bindings
+
 bindsym $mod+q kill
 
-# change focus : $mod + {direction}
-#bindsym $mod+h focus left
-#bindsym $mod+j focus down
-#bindsym $mod+k focus up
-#bindsym $mod+l focus right
-# TODO: add $mod+arrows fallback
-bindsym $mod+h exec "~/.config/i3/move-cursor-window-center.sh focus left"
-bindsym $mod+j exec "~/.config/i3/move-cursor-window-center.sh focus down"
-bindsym $mod+k exec "~/.config/i3/move-cursor-window-center.sh focus up"
-bindsym $mod+l exec "~/.config/i3/move-cursor-window-center.sh focus right"
+# Focus with arrows or Vim keys
+bindsym $mod+h exec --no-startup-id "~/.config/i3/move-cursor-window-center.sh focus left"
+bindsym $mod+j exec --no-startup-id "~/.config/i3/move-cursor-window-center.sh focus down"
+bindsym $mod+k exec --no-startup-id "~/.config/i3/move-cursor-window-center.sh focus up"
+bindsym $mod+l exec --no-startup-id "~/.config/i3/move-cursor-window-center.sh focus right"
 
-# move focused window : $mod + Shift + {direction}
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-# TODO: add $mod+arrows fallback
+bindsym $mod+Left exec --no-startup-id "~/.config/i3/move-cursor-window-center.sh focus left"
+bindsym $mod+Down exec --no-startup-id "~/.config/i3/move-cursor-window-center.sh focus down"
+bindsym $mod+Up exec --no-startup-id "~/.config/i3/move-cursor-window-center.sh focus up"
+bindsym $mod+Right exec --no-startup-id "~/.config/i3/move-cursor-window-center.sh focus right"
 
-# toggle split direction : $mod + x
+# Move with arrows or Vim keys
+bindsym $mod+Shift+h exec --no-startup-id "~/.config/i3/move-cursor-window-center.sh move left"
+bindsym $mod+Shift+j exec --no-startup-id "~/.config/i3/move-cursor-window-center.sh move down"
+bindsym $mod+Shift+k exec --no-startup-id "~/.config/i3/move-cursor-window-center.sh move up"
+bindsym $mod+Shift+l exec --no-startup-id "~/.config/i3/move-cursor-window-center.sh move right"
+
+bindsym $mod+Shift+Left exec --no-startup-id "~/.config/i3/move-cursor-window-center.sh move left"
+bindsym $mod+Shift+Down exec --no-startup-id "~/.config/i3/move-cursor-window-center.sh move down"
+bindsym $mod+Shift+Up exec --no-startup-id "~/.config/i3/move-cursor-window-center.sh move up"
+bindsym $mod+Shift+Right exec --no-startup-id "~/.config/i3/move-cursor-window-center.sh move right"
+
+
+# Toggle split direction
 bindsym $mod+x split toggle
 
-# fullscreen : $mod + f
+# Fullscreen
 bindsym $mod+f fullscreen toggle
 
-# change container layout
+# Change container layout
 bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
@@ -115,6 +124,8 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
+bindsym $mod+Tab focus next
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
@@ -133,7 +144,12 @@ bindsym $mod+Control+j resize grow height 15 px or 10 ppt
 bindsym $mod+Control+k resize shrink height 15 px or 10 ppt
 bindsym $mod+Control+l resize grow width 15 px or 10 ppt
 
-# Drag floating windows with mouse + $mod
+bindsym $mod+Control+Left resize shrink width 15 px or 10 ppt
+bindsym $mod+Control+Down resize grow height 15 px or 10 ppt
+bindsym $mod+Control+Up resize shrink height 15 px or 10 ppt
+bindsym $mod+Control+Right resize grow width 15 px or 10 ppt
+
+
 floating_modifier $mod
 
 # class                 border  bground text    indicator child_border
@@ -160,7 +176,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id gnome-flashback
 
 # startup
-exec ~/.config/i3/elecom-rebind.sh &
-exec --no-startup-id ~/.config/i3/elecom-scroll.sh &
-exec --no-startup-id ~/.config/i3/set-key-repeat.sh &
+exec --no-startup-id ~/.config/i3/set-key-repeat.sh
+exec --no-startup-id ~/dev/otrac/middle-button-emulation.sh
+
 
