@@ -9,7 +9,7 @@ SETUVAR _fish_abbr_cx:chmod\x20\x2bx
 SETUVAR _fish_abbr_fe:funced
 SETUVAR _fish_abbr_fs:funcsave
 SETUVAR _fish_abbr_g:git
-SETUVAR _fish_abbr_hn:hnote\x2esh
+SETUVAR _fish_abbr_hn:helpnotes
 SETUVAR _fish_abbr_icat:kitty\x20\x2b\x20kitten\x20icat
 SETUVAR _fish_abbr_ms:mkscript
 SETUVAR _fish_abbr_n:node
