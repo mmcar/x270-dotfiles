@@ -1,0 +1,2 @@
+* recenter cursor on location -> zz
+* buffers
