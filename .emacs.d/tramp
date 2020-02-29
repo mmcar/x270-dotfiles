@@ -1,0 +1,14 @@
+;; -*- emacs-lisp -*- <20/02/20 21:36:48 /home/matt/.emacs.d/tramp>
+;; Tramp connection history.  Don't change this file.
+;; You can delete it, forcing Tramp to reapply the checks.
+
+(((tramp-file-name "http" nil nil "x270" nil nil nil)
+  ("default-location" ""))
+ ((tramp-file-name "trash" nil nil "x270" nil nil nil)
+  ("default-location" ""))
+ ((tramp-file-name "recent" nil nil "x270" nil nil nil)
+  ("default-location" ""))
+ ((tramp-file-name "dns-sd" nil nil "local" nil nil nil)
+  ("default-location" ""))
+ ((tramp-file-name "network" nil nil "x270" nil nil nil)
+  ("default-location" "")))

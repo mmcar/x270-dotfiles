@@ -1,0 +1,35 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/" . "matt/")
+ ("/home/matt/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/matt/.emacs.d/"
+ "/home/matt/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ ".emacs"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/matt/.emacs.d/" (24143 423 704415 804000) ".local/" "init.el" "auto-save-list/" "elpa/" "./" "../")
+
+ ("/home/matt/" (24143 423 704415 804000) ".thunderbird/" ".lmmsrc.xml" ".fzf/" ".bash_logout" ".aspnet/" "Slippi/" ".gitkraken/" ".pylint.d/" ".vimrc_background" ".pki/" ".mozilla/" ".elvish/" "Desktop/" ".fltk/" "lmms/" ".lesshst" ".nuget/" ".vscode/" ".local/" ".cache/" "Bitwig Studio/" ".steampath" ".dotfiles.git/" "Documents/" ".openbazaar/" ".lyx/" ".odbc.ini" ".w3m/" ".temp/" ".yarn/" ".config/" ".bash_history" ".gitconfig" ".ptpython/" ".gnupg/" ".steam/" ".gconf/" ".bashrc" "tmp/" ".pyenv/" ".yarnrc" "masteringemacs.pdf" ".emacs~" ".viminfo" ".tldr/" ".steampid" "dev/" "dotfiles/" ".npm/" ".sudo_as_admin_successful" ".emacs.d/" "org/" ".profile" "Firefox_wallpaper.png" ".dotnet/" ".gphoto/" ".ssh/" "Games/" ".templateengine/" ".openbazaar2.0-clientData/" "./" ".wine/" ".giada/" ".minecraft/" ".fzf.bash" "../" ".themes/" ".vuerc" ".nvmrc" "Downloads/" "snap/" "Pictures/" "bin/" ".python_history" "core" ".wget-hsts" ".base16_theme" "Public/" ".BitwigStudio/")
+
+ ("/home/matt/.config/helpnotes/" (24143 338 580645 44000) "emacs.org~" "kitty.md" "emacs.org" "./" "../")
+
+ ("/home/" (23967 28775 414719 333000) "./" "../" "matt/")
+
+ ("/home/matt/.config/" (24141 46107 455123 631000) "transmission/" "balena-etcher-electron/" "QtProject.conf" "kilerc" "goa-1.0/" "base16-shell/" "autostart/" "Slippi Desktop App/" "cef_user_data/" "kritadisplayrc" "pulse/" "enchant/" "Zeal/" "s-tui/" "dfconf/" "gnome-boxes/" "gpick/" "neofetch/" "yelp/" "update-notifier/" "user-dirs.locale" "ibus/" "vivaldi/" "lutris/" "user-dirs.dirs" "hub" "nvm/" "menus/" "gedit/" "totem/" "zathura/" "gnome-games/" "mimeapps.list" "GitKraken/" "Dharkael/" "kdeglobals" "kitty/" "htop/" "kile-livepreview-okularpartrc" "evolution/" "session/" "qutebrowser/" "kactivitymanagerdrc" "eog/" "i3/" "monitors.xml~" "hnote/" "libreoffice/" "kdeconnect/" "gtk-3.0/" "Code/" "vlc/" "fisher/" "Thunar/" "libvirt/" "ranger/" "rofi/" "katevirc" "monitors.xml" "procps/" "helpnotes/" "nvim/" "nautilus/" "xfce4/" "okularrc" "kglobalshortcutsrc" "Electron/" "gnome-control-center/" "./" "ia.ini" "configstore/" "gtk-4.0/" "../" "Rygel/" "fish/" "i3status/" "Trolltech.conf" "gnome-initial-setup-done" "dconf/" "karboncalligraphyrc" "deepin/" "polybar/" "gtk-2.0/" "google-chrome/" "kritarc" "gnome-session/" "coc/")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

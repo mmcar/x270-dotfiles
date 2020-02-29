@@ -6,6 +6,7 @@ SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
 SETUVAR _fish_abbr_aa:abbr\x20\x2d\x2dadd
 SETUVAR _fish_abbr_cx:chmod\x20\x2bx
+SETUVAR _fish_abbr_em:emacsclient\x20\x2dn
 SETUVAR _fish_abbr_fe:funced
 SETUVAR _fish_abbr_fs:funcsave
 SETUVAR _fish_abbr_g:git
