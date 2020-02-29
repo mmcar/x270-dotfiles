@@ -1,0 +1,106 @@
+-*- page: 126 -*-
+* Terms and Conventions (P23)
+- Buffer
+- Window -> A tiled portion of the Frame containing _exactly one_ buffer
+- Frame
+- Modeline -> the bar at the bottom containing info about the buffer
+- Minibuffer -> directly below Modeline, contains errors and general information
+- Echo area -> shares spot with Minibuffer
+- Point -> caret/cursor. Your current position in a buffer. Represented with -!-
+- Mark -> region of text boundary selectable with point and mark. Invisible. Can also be used to return from other parts of a buffer
+- Killing -> cutting
+- Yanking -> pasting
+- Copying == 'Saving to the Kill ring'
+- CUA -> most 'normal' terminology stems from IBM's Common User Access (CUA), emacs predates this
+- M-x -> Execute Extended Command
+- Universal Argument -> C-u. C-u 10 a prints 10 a's. C-u passed to functions with M-x etc
+- Digit Argument -> to be passed to any command. C-u, M-0 to M-9, C-0 to C-9, C-M-0 to C-M-9 (C-- is negative argument)
+- Get help -> append C-h to any prefix key to get a list of bindings that belong to that key map. ie: C-x 8 C-h
+
+* Keys
+- M-d -> Kills word after point
+- M-- -> negative argument
+
+* Things to know
+- M-x package-list-packages
+- Info manual -> _M-x info_ or _C-h i_. Press H for info keybinds
+- Open Emacs manual -> _M-x info_ -> m -> type Emacs or Emacs Lisp Intro
+- Documentation for a command -> _C-h F_ -> enter name of command (opens in info manual)
+- apropos-command -> _C-h a_ -> list commands based on search. -word lists all ending in '-word'
+- Describe system -> gets documentation
+  - describe-mode or _C-h m_ -> documentation and keybinds for the major mode
+  - describe-function or _C-h f_
+  - describe-variable or _C-h v_
+  - describe-key or _C-h k_
+
+* Getting Around (P74)
+- _C-x b_ -> Switch buffers
+- _C-x k_ -> Kill (close) buffer
+- _C-x C-b_ -> Display all open buffers
+- _ESC ESC ESC_ -> Close everything, return to just 1 open window
+- _C-/_ -> undo changes
+
+* Window Management
+- _C-x 0_ -> Delete the _active_ window
+- _C-x 1_ -> Delete _other_ windows
+- _C-x 2_ -> Split window below
+- _C-x 3_ -> Split window right
+- _C-x o_ -> Switch active window
+- winner-mode -> lets you undo and redo window configuration with C-c left/right
+- windmove -> package that ships /w emacs, cycle windows with S-<arrow>. Include with (windmove-default-keybindings)
+- Find file in other window -> C-x 4 C-f
+- Open M-x dired in other window -> C-x 4 d
+- Display buffer in other window -> C-x 4 C-o
+- Switch buffer in other window and make it the active window -> C-x 4 b
+- Kill buffer _and_ window -> C-x 4 0
+- More -> C-x 4 C-h
+- With frame -> C-x 5
+- Create new frame -> C-x 5 2
+
+* Navigation Keys
+C-f/b/n/p -> move by char or line. Works with universal and/or negative argument as well. ie: _C-- C-8 C-f_ goes 8 backwards
+M-f / M-b -> move by word
+C-a -> beginning of line
+C-e -> end of line
+M-m -> first non-whitespace character
+C-M-f / b -> move by s-expression ([] {} ())
+C-M-d / u -> move down into or up out of a list or balanced expression
+C-M-n / p -> move forward or previous list
+M-{ / } -> move by paragraph
+M-a / e -> move by sentence
+C-M-a / e -> move by defun
+C-x ] or [ -> move forward / backward by page (seldom used)
+
+* Scrolling
+C-v -> down 1 page
+M-v -> up 1 page
+C-M-v -> scroll down _other_ window
+C-M-S-v -> scroll up _other_ window
+C-x < _or_ C-<next> -> scroll left
+C-x > _or_ C-<prior> -> scroll right
+M-< -> beginning of buffer
+M-> -> end of buffer
+C-u C-<SPC> -> return to mark
+
+** Questions
+How do I swap postions of 2 buffers?
+How do I zoom a buffer? Unzoom?
+
+* Bookmarks and Registers
+- C-x r m -> Set a bookmark
+- C-x r l -> List bookmarks
+- C-x r b -> Jump to bookmark
+
+- C-x r n -> Store number in register
+- C-x r s -> Store region in register
+- C-x r SPC -> Store space in register
+- C-x r + -> increment number in register
+- C-x r j -> jump to register
+- C-x r i -> insert content of register
+- C-x r w -> Store window configuration in register
+- C-x r f ->> Store frameset in register
+
+* Selections and Regions
+C-SPC
+M-< M->
+C-u C-SPC
