@@ -81,8 +81,7 @@ C-x > _or_ C-<prior> -> scroll right
 M-< -> beginning of buffer
 M-> -> end of buffer
 C-u C-<SPC> -> return to mark
-
-** Questions
+* Questions
 How do I swap postions of 2 buffers?
 How do I zoom a buffer? Unzoom?
 

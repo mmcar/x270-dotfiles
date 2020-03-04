@@ -1,4 +1,4 @@
--*- page: 121 -*-
+-*- page: 126 -*-
 * Terms and Conventions (P23)
 - Buffer
 - Window -> A tiled portion of the Frame containing _exactly one_ buffer
@@ -86,3 +86,21 @@ C-u C-<SPC> -> return to mark
 How do I swap postions of 2 buffers?
 How do I zoom a buffer? Unzoom?
 
+* Bookmarks and Registers
+- C-x r m -> Set a bookmark
+- C-x r l -> List bookmarks
+- C-x r b -> Jump to bookmark
+
+- C-x r n -> Store number in register
+- C-x r s -> Store region in register
+- C-x r SPC -> Store space in register
+- C-x r + -> increment number in register
+- C-x r j -> jump to register
+- C-x r i -> insert content of register
+- C-x r w -> Store window configuration in register
+- C-x r f ->> Store frameset in register
+
+* Selections and Regions
+C-SPC
+M-< M->
+C-u C-SPC
