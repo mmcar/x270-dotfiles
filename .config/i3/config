@@ -102,16 +102,16 @@ smart_borders on
 border_radius 3
 
 # Define workspaces
-set $ws1 "1:A"
-set $ws2 "2:B"
-set $ws3 "3:C"
-set $ws4 "4:D"
-set $ws5 "5:E"
-set $ws6 "6:F"
-set $ws7 "7:G"
-set $ws8 "8:H"
-set $ws9 "9:I"
-set $ws10 "10:J"
+set $ws1 "A"
+set $ws2 "B"
+set $ws3 "C"
+set $ws4 "D"
+set $ws5 "E"
+set $ws6 "F"
+set $ws7 "G"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -152,6 +152,14 @@ bindsym $mod+Control+Right resize grow width 15 px or 10 ppt
 
 floating_modifier $mod
 
+# bar
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        status_command i3status
+        position top
+}
+
 # class                 border  bground text    indicator child_border
 client.focused	        #cac5c4 #CCCCCC #333333 #0f62fe
 
@@ -163,7 +171,5 @@ exec --no-startup-id gnome-flashback
 
 # startup
 exec --no-startup-id ~/.config/i3/set-key-repeat.sh
-exec --no-startup-id ~/dev/otrac/middle-button-emulation.sh
-exec_always --no-startup-id ~/.config/i3/polybar.sh &
-
+# exec --no-startup-id ~/dev/otrac/middle-button-emulation.sh
 
